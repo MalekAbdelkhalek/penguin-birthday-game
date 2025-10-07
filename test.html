@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengu Birthday Quiz 🎉🐧</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="pengu4.png">
-
     <style>
         * {
             margin: 0;
@@ -154,6 +152,7 @@
             box-shadow: 0 6px 0 #04b586;
         }
 
+        /* CHANGED: Added alert-btn styles for see-pics-btn to look like an alert */
         .alert-btn {
             background-color: #ff4d4d;
             box-shadow: 0 4px 0 #cc0000;
@@ -249,62 +248,20 @@
             gap: 20px;
         }
 
-        .photo-flip-container {
-            perspective: 1000px;
+        .photo-item {
+            width: 100%;
             height: 180px;
-        }
-
-        .photo-flip {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            cursor: pointer;
-        }
-
-        .photo-flip.flipped {
-            transform: rotateY(180deg);
-        }
-
-        .photo-front,
-        .photo-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .photo-front {
-            background-color: white;
-        }
-
-        .photo-front img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
             border-radius: 15px;
-        }
-
-        .photo-back {
-            background: linear-gradient(135deg, #ff9e6d, #ff6b6b);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transform: rotateY(180deg);
-            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
         .photo-item:hover {
             transform: scale(1.05);
         }
 
+        /* Penguin styles */
         .penguin {
             position: absolute;
             width: 80px;
@@ -406,6 +363,7 @@
             right: 15px;
         }
 
+        /* Dancing penguins */
         .dancing-penguins {
             display: flex;
             justify-content: center;
@@ -427,6 +385,7 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
         }
 
+        /* Surprise elements */
         .surprise-image {
             display: none;
             max-width: 100%;
@@ -434,17 +393,6 @@
             margin: 20px auto;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .surprise-text {
-            display: none;
-            font-size: 1.5rem;
-            color: #000000;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            margin: 20px 0;
-            padding: 15px;
-            background: linear-gradient(135deg, #ffd166, #ff9e6d);
-            border-radius: 10px;
         }
 
         .surprise-video {
@@ -492,6 +440,7 @@
             100% { transform: translateY(0) rotate(0); }
         }
 
+        /* Penguin animations */
         .penguin-float {
             animation: float 6s infinite ease-in-out;
         }
@@ -530,7 +479,7 @@
             .surprise-video {
                 height: 250px;
             }
-
+            /* CHANGED: Adjusted alert-btn padding for smaller screens */
             .alert-btn {
                 padding: 10px 20px;
                 font-size: 1rem;
@@ -539,6 +488,7 @@
     </style>
 </head>
 <body>
+    <!-- Moving Penguins -->
     <div class="penguin penguin-float" style="top: 10%; left: 5%; animation-delay: 0s;">
         <div class="penguin-body">
             <div class="penguin-belly"></div>
@@ -592,6 +542,7 @@
     </div>
 
     <div class="container">
+        <!-- Welcome Screen -->
         <div class="screen welcome-screen active">
             <h1>Pengu Birthday Quiz! 🎉🐧</h1>
             <h2>For: <span id="birthday-person">Raisu</span></h2>
@@ -600,6 +551,7 @@
             <button class="btn start-btn">Start Quiz</button>
         </div>
 
+        <!-- Quiz Screen -->
         <div class="screen quiz-screen">
             <h2>Question <span id="question-number">1</span> of <span id="total-questions">8</span></h2>
             <div class="progress">
@@ -615,12 +567,12 @@
             </div>
         </div>
 
+        <!-- Celebration Screen -->
         <div class="screen celebration-screen">
             <h1>🎉 Happy Birthday <span id="birthday-name">Raisu</span>! 🎉</h1>
-            <p class="birthday-message">My lovely and only taisuuu 🥹  Happy birthdayyy to the cutest human being on earth, to the best duo I can ever have, to the most beautiful, cute and wonderful girl in the world, to the best gift god sent me this year 🥰 I'm soooo glad and grateful to have you in my life, you fking light it up :))), Wishing you all the best and more in your life because you fking deserve it 🌺 Again, I’m sooo lucky to have you around! May our friendship grow stronger with your age 🥹 May this journey of your life leads to more achievements and more successes and I'm sure it will because you are a smart penguu and creative cutie, May the coming years add wisdom, warmth and success to your life 🍏 Some friendships last for a few days. Some last for a lifetime. I pray our friendship remains forever strong (I rllyyy hope soooo 🥹) You bring an enormous amount of happiness to my life, you are so precious raisuuu, So lucky to have a kind, cute, funny, caring and pretty friend like you 😍  
-At the end, thank god for bringing you to this life, and I rlly need to thank your dad and your mom for assuring it😂 I'm really grateful to them 😂. 
-Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you are and keep shining bright! Wishing you a happy and healthy life now and forever, LAVIU, A BIG BOUSA ON UR NOSE 😙😋🫶 </p>
+            <p class="birthday-message">You've completed the quiz! Wishing you an amazing day filled with joy and laughter!</p>
             
+            <!-- Dancing Penguins -->
             <div class="dancing-penguins">
                 <div class="dancing-penguin">
                     <img src="pengu.png" alt="Dancing Penguin 1">
@@ -644,77 +596,25 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
             
             <button class="btn alert-btn" id="see-pics-btn">Careful, Don't click here! OVERDOSE CUTNESS</button>
             
+            <!-- Photo Gallery -->
             <div class="photo-gallery" id="photo-gallery">
-                <h2>How can a human-being to be that cute !!! (click on the pictures for another message)</h2>
+                <h2>How can a human-being to be that cute !!!</h2>
                 <div class="photo-grid">
-                    <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="HAPPY">
-                            <div class="photo-front">
-                                <img src="picture1.jpg" alt="Memory 1">
-                            </div>
-                            <div class="photo-back">
-                                <span>La mulți ani! 🎉</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="BIRTHDAY">
-                            <div class="photo-front">
-                                <img src="picture2.jpg" alt="Memory 2">
-                            </div>
-                            <div class="photo-back">
-                                <span>Îți doresc toată fericirea din lume.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="RAISU">
-                            <div class="photo-front">
-                                <img src="picture3.jpg" alt="Memory 3">
-                            </div>
-                            <div class="photo-back">
-                                <span>Te iubesc mult ❤️</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="FROM">
-                            <div class="photo-front">
-                                <img src="picture4.jpg" alt="Memory 4">
-                            </div>
-                            <div class="photo-back">
-                                <span>Fie ca toate visele tale să devină realitate anul acesta.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="LOVE">
-                            <div class="photo-front">
-                                <img src="picture5.jpg" alt="Memory 5">
-                            </div>
-                            <div class="photo-back">
-                                <span>Spor la mai multe amintiri minunate împreună 🥂</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="PENGUINS">
-                            <div class="photo-front">
-                                <img src="picture6.jpg" alt="Memory 6">
-                            </div>
-                            <div class="photo-back">
-                                <span>Rămâi binecuvântată și continuă să strălucești ✨</span>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="picture1.jpg" alt="Memory 1" class="photo-item">
+                    <img src="picture2.jpg" alt="Memory 2" class="photo-item">
+                    <img src="picture3.jpg" alt="Memory 3" class="photo-item">
+                    <img src="picture4.jpg" alt="Memory 4" class="photo-item">
+                    <img src="picture5.jpg" alt="Memory 5" class="photo-item">
+                    <img src="picture6.jpg" alt="Memory 6" class="photo-item">
                 </div>
                 
                 <button class="btn surprise-btn" id="surprise-btn">I know you like surprises, click here to get one!</button>
             </div>
             
-            <p class="surprise-text" id="surprise-text">A special surprise for my favorite Pingu! happy first birthday in my heart🐧💖</p>
+            <!-- Surprise Image -->
             <img src="surprising_picture.jpg" alt="Surprise!" class="surprise-image" id="surprise-image">
             
+            <!-- End Button and Video -->
             <button class="btn end-btn" id="end-btn" style="display: none;">Let's end with a ...</button>
             
             <div class="final-message" id="final-message">
@@ -729,50 +629,52 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
     </div>
 
     <script>
-        const birthdayPerson = "Raisu";
+        // Quiz data - customize this for the birthday person!
+        const birthdayPerson = "Raisu"; // Change this to the birthday person's name
         const quizData = [
             {
                 question: `What word do I call you the most recently?`,
-                answers: ["cutie", "blue"],
+                answers: ["cutie", "blue"], // Multiple correct answers
                 hint: "Hint: It's the word that best describes you."
-                        },
-            {
-                question: `In what month did we start talking?`,
-                answers: ["december"], // Multiple correct answers
-                hint: "Hint: WTF PINGU, U want me to give u a hint for this one!"
-            },
-            {
-                question: `What combo of agents do we usually play with the most? (enter the answer like that agent/agent)`,
-                answers: ["phoenix/clove","phnx/clove"], // Multiple correct answers
-                hint: "Hint: BBC/transgender"
-            },
-            {
-                question: `What's our favorite song? `,
-                answers: ["apt apt", "apt"], // Multiple correct answers
-                hint: "Hint: DONT U WANT ME LIKE I WANT U BABY !!!"
-            },
-            {
-                question: `If someone asked you to say a word that only you and I would understand, what would it be? (there are 4 words)`,
-                answers: ["mffina", "mffino", "handie", "ididot"], // Multiple correct answers
-                hint: "Hint: mff(male/female), handsome, idiot"
-            },
-            {
-                question: `What was the Right Ball account's name before it became Right Ball?`,
-                answers: ["SayebZebi"], // Multiple correct answers
-                hint: "Hint: Leave My Pula"
-            },
-            {
-                question: `What was the Left Ball account's name before it became Left Ball?`,
-                answers: ["MoukaAbk"], // Multiple correct answers
-                hint: "Hint: Remember my famous nickname"
-            },
-            {
-                question: `Since I know you like Math, find x: (2x + 10) / (x - 5) + √x = 4 + √15`,
-                answers: ["15"], // Multiple correct answers
-                hint: "Hint: It's my little pingu's age :)))"
+            // },
+            // {
+            //     question: `In what month did we start talking?`,
+            //     answers: ["december"], // Multiple correct answers
+            //     hint: "Hint: WTF PINGU, U want me to give u a hint for this one!"
+            // },
+            // {
+            //     question: `What combo of agents do we usually play with the most? (enter the answer like that agent/agent)`,
+            //     answers: ["phoenix/clove"], // Multiple correct answers
+            //     hint: "Hint: BBC/cuteness"
+            // },
+            // {
+            //     question: `What's our favorite song? `,
+            //     answers: ["apt apt", "apt"], // Multiple correct answers
+            //     hint: "Hint: DONT U WANT ME LIKE I WANT U BABY !!!"
+            // },
+            // {
+            //     question: `If someone asked you to say a word that only you and I would understand, what would it be? (there are 4 words)`,
+            //     answers: ["mffina", "mffino", "handie", "ididot"], // Multiple correct answers
+            //     hint: "Hint: mff(male/female), handsome, idiot"
+            // },
+            // {
+            //     question: `What was the Right Ball account's name before it became Right Ball?`,
+            //     answers: ["SayebZebi"], // Multiple correct answers
+            //     hint: "Hint: Leave My Pula"
+            // },
+            // {
+            //     question: `What was the Left Ball account's name before it became Left Ball?`,
+            //     answers: ["MoukaAbk"], // Multiple correct answers
+            //     hint: "Hint: Remember my famous nickname"
+            // },
+            // {
+            //     question: `Since I know you like Math, find x: (2x + 10) / (x - 5) + √x = 4 + √15`,
+            //     answers: ["15"], // Multiple correct answers
+            //     hint: "Hint: It's my little pingu's age :)))"
             }
         ];
 
+        // DOM Elements
         const welcomeScreen = document.querySelector('.welcome-screen');
         const quizScreen = document.querySelector('.quiz-screen');
         const celebrationScreen = document.querySelector('.celebration-screen');
@@ -793,72 +695,71 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
         const birthdayNameElement = document.getElementById('birthday-name');
         const photoGallery = document.getElementById('photo-gallery');
         const surpriseImage = document.getElementById('surprise-image');
-        const surpriseText = document.getElementById('surprise-text');
         const surpriseVideo = document.getElementById('surprise-video');
         const finalMessage = document.getElementById('final-message');
         const birthdayMessage = document.querySelector('.birthday-message');
         const dancingPenguins = document.querySelector('.dancing-penguins');
 
+        // Set birthday person's name
         birthdayPersonElement.textContent = birthdayPerson;
         birthdayNameElement.textContent = birthdayPerson;
         totalQuestions.textContent = quizData.length;
 
+        // Quiz state
         let currentQuestion = 0;
         let score = 0;
 
+        // Start quiz
         startBtn.addEventListener('click', startQuiz);
 
+        // Enable submit button when there's input
         answerInput.addEventListener('input', () => {
             submitBtn.disabled = answerInput.value.trim() === '';
         });
 
+        // Submit answer
         submitBtn.addEventListener('click', checkAnswer);
 
+        // Allow pressing Enter to submit
         answerInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && !submitBtn.disabled) {
                 checkAnswer();
             }
         });
 
+        // Show hint and highlight button
         hintBtn.addEventListener('click', () => {
             hintElement.style.display = 'block';
             hintBtn.classList.add('hint-btn-active');
-            hintBtn.disabled = true;
+            hintBtn.disabled = true; // Disable button after showing hint
         });
 
+        // See pics button
         seePicsBtn.addEventListener('click', () => {
             birthdayMessage.style.display = 'none';
             dancingPenguins.style.display = 'none';
             photoGallery.style.display = 'flex';
             seePicsBtn.style.display = 'none';
             surpriseImage.style.display = 'none';
-            surpriseText.style.display = 'none';
             endBtn.style.display = 'none';
             finalMessage.style.display = 'none';
         });
 
+        // Surprise button
         surpriseBtn.addEventListener('click', () => {
             photoGallery.style.display = 'none';
             surpriseImage.style.display = 'block';
-            surpriseText.style.display = 'block';
             endBtn.style.display = 'block';
             surpriseBtn.style.display = 'none';
             finalMessage.style.display = 'none';
         });
 
+        // End button
         endBtn.addEventListener('click', () => {
             surpriseImage.style.display = 'none';
-            surpriseText.style.display = 'none';
             surpriseVideo.style.display = 'block';
             finalMessage.style.display = 'block';
             endBtn.style.display = 'none';
-        });
-
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.photo-flip')) {
-                const flipElement = e.target.closest('.photo-flip');
-                flipElement.classList.toggle('flipped');
-            }
         });
 
         function startQuiz() {
@@ -868,38 +769,45 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
         }
 
         function showQuestion() {
+            // Reset state
             hintElement.style.display = 'none';
             hintBtn.classList.remove('hint-btn-active');
-            hintBtn.disabled = false;
+            hintBtn.disabled = false; // Re-enable hint button for new question
             messageElement.textContent = '';
             messageElement.className = 'message';
             answerInput.value = '';
             answerInput.disabled = false;
             submitBtn.disabled = true;
             
+            // Update progress
             const progress = ((currentQuestion) / quizData.length) * 100;
             progressBar.style.width = `${progress}%`;
             
+            // Display question
             const question = quizData[currentQuestion];
             questionNumber.textContent = currentQuestion + 1;
             questionText.textContent = question.question;
             hintElement.textContent = question.hint;
             
+            // Focus on input
             answerInput.focus();
         }
 
         function checkAnswer() {
             const userAnswer = answerInput.value.trim().toLowerCase();
-            const correctAnswers = quizData[currentQuestion].answers.map(ans => ans.toLowerCase());
+            const correctAnswers = quizData[currentQuestion].answers.map(ans => ans.toLowerCase()); // Convert all correct answers to lowercase
             
+            // Disable input and submit button
             answerInput.disabled = true;
             submitBtn.disabled = true;
             
+            // Check if correct
             if (correctAnswers.includes(userAnswer)) {
                 messageElement.textContent = "Correct! Well played Taisu🎉";
                 messageElement.className = "message correct-message";
                 score++;
                 
+                // Automatically move to next question or celebration
                 setTimeout(() => {
                     currentQuestion++;
                     if (currentQuestion < quizData.length) {
@@ -912,6 +820,7 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
                 messageElement.textContent = "Not quite! Try again Raisu or use the hint button.";
                 messageElement.className = "message incorrect-message";
                 
+                // Re-enable input and submit button
                 setTimeout(() => {
                     answerInput.disabled = false;
                     answerInput.focus();
@@ -924,15 +833,16 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
             quizScreen.classList.remove('active');
             celebrationScreen.classList.add('active');
             
+            // Reset celebration screen elements
             birthdayMessage.style.display = 'block';
             dancingPenguins.style.display = 'flex';
             seePicsBtn.style.display = 'block';
             photoGallery.style.display = 'none';
             surpriseImage.style.display = 'none';
-            surpriseText.style.display = 'none';
             endBtn.style.display = 'none';
             finalMessage.style.display = 'none';
             
+            // Create confetti
             createConfetti();
         }
 
@@ -947,6 +857,7 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
                     
                     document.body.appendChild(confetti);
                     
+                    // Remove confetti after animation
                     setTimeout(() => {
                         confetti.remove();
                     }, 8000);
@@ -954,6 +865,7 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
             }
         }
 
+        // Add CSS for confetti animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fall {

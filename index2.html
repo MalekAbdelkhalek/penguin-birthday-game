@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengu Birthday Quiz 🎉🐧</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="pengu4.png">
-
     <style>
         * {
             margin: 0;
@@ -252,6 +250,7 @@
         .photo-flip-container {
             perspective: 1000px;
             height: 180px;
+            max-width: 100%;
         }
 
         .photo-flip {
@@ -292,6 +291,11 @@
             border-radius: 15px;
         }
 
+        /* CHANGED: Use object-fit: contain for surprise image to show full image */
+        .surprise-flip-container .photo-front img {
+            object-fit: contain;
+        }
+
         .photo-back {
             background: linear-gradient(135deg, #ff9e6d, #ff6b6b);
             color: white;
@@ -303,6 +307,15 @@
 
         .photo-item:hover {
             transform: scale(1.05);
+        }
+
+        .surprise-flip-container {
+            perspective: 1000px;
+            max-width: 100%;
+            height: 400px;
+            max-height: 400px;
+            margin: 20px auto;
+            display: none;
         }
 
         .penguin {
@@ -427,26 +440,6 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
         }
 
-        .surprise-image {
-            display: none;
-            max-width: 100%;
-            max-height: 400px;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .surprise-text {
-            display: none;
-            font-size: 1.5rem;
-            color: #000000;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            margin: 20px 0;
-            padding: 15px;
-            background: linear-gradient(135deg, #ffd166, #ff9e6d);
-            border-radius: 10px;
-        }
-
         .surprise-video {
             display: none;
             width: 100%;
@@ -531,6 +524,11 @@
                 height: 250px;
             }
 
+            .surprise-flip-container {
+                height: 250px;
+                max-height: 250px;
+            }
+
             .alert-btn {
                 padding: 10px 20px;
                 font-size: 1rem;
@@ -601,7 +599,7 @@
         </div>
 
         <div class="screen quiz-screen">
-            <h2>Question <span id="question-number">1</span> of <span id="total-questions">8</span></h2>
+            <h2>Question <span id="question-number">1</span> of <span id="total-questions">1</span></h2>
             <div class="progress">
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
@@ -617,9 +615,7 @@
 
         <div class="screen celebration-screen">
             <h1>🎉 Happy Birthday <span id="birthday-name">Raisu</span>! 🎉</h1>
-            <p class="birthday-message">My lovely and only taisuuu 🥹  Happy birthdayyy to the cutest human being on earth, to the best duo I can ever have, to the most beautiful, cute and wonderful girl in the world, to the best gift god sent me this year 🥰 I'm soooo glad and grateful to have you in my life, you fking light it up :))), Wishing you all the best and more in your life because you fking deserve it 🌺 Again, I’m sooo lucky to have you around! May our friendship grow stronger with your age 🥹 May this journey of your life leads to more achievements and more successes and I'm sure it will because you are a smart penguu and creative cutie, May the coming years add wisdom, warmth and success to your life 🍏 Some friendships last for a few days. Some last for a lifetime. I pray our friendship remains forever strong (I rllyyy hope soooo 🥹) You bring an enormous amount of happiness to my life, you are so precious raisuuu, So lucky to have a kind, cute, funny, caring and pretty friend like you 😍  
-At the end, thank god for bringing you to this life, and I rlly need to thank your dad and your mom for assuring it😂 I'm really grateful to them 😂. 
-Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you are and keep shining bright! Wishing you a happy and healthy life now and forever, LAVIU, A BIG BOUSA ON UR NOSE 😙😋🫶 </p>
+            <p class="birthday-message">You've completed the quiz! Wishing you an amazing day filled with joy and laughter!</p>
             
             <div class="dancing-penguins">
                 <div class="dancing-penguin">
@@ -648,62 +644,62 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
                 <h2>How can a human-being to be that cute !!! (click on the pictures for another message)</h2>
                 <div class="photo-grid">
                     <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="HAPPY">
+                        <div class="photo-flip" data-text="la">
                             <div class="photo-front">
                                 <img src="picture1.jpg" alt="Memory 1">
                             </div>
                             <div class="photo-back">
-                                <span>La mulți ani! 🎉</span>
+                                <span>la</span>
                             </div>
                         </div>
                     </div>
                     <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="BIRTHDAY">
+                        <div class="photo-flip" data-text="meu">
                             <div class="photo-front">
                                 <img src="picture2.jpg" alt="Memory 2">
                             </div>
                             <div class="photo-back">
-                                <span>Îți doresc toată fericirea din lume.</span>
+                                <span>meu</span>
                             </div>
                         </div>
                     </div>
                     <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="RAISU">
+                        <div class="photo-flip" data-text="drăguț">
                             <div class="photo-front">
                                 <img src="picture3.jpg" alt="Memory 3">
                             </div>
                             <div class="photo-back">
-                                <span>Te iubesc mult ❤️</span>
+                                <span>drăguț</span>
                             </div>
                         </div>
                     </div>
                     <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="FROM">
+                        <div class="photo-flip" data-text="la">
                             <div class="photo-front">
                                 <img src="picture4.jpg" alt="Memory 4">
                             </div>
                             <div class="photo-back">
-                                <span>Fie ca toate visele tale să devină realitate anul acesta.</span>
+                                <span>la</span>
                             </div>
                         </div>
                     </div>
                     <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="LOVE">
+                        <div class="photo-flip" data-text="mulți">
                             <div class="photo-front">
                                 <img src="picture5.jpg" alt="Memory 5">
                             </div>
                             <div class="photo-back">
-                                <span>Spor la mai multe amintiri minunate împreună 🥂</span>
+                                <span>mulți</span>
                             </div>
                         </div>
                     </div>
                     <div class="photo-flip-container">
-                        <div class="photo-flip" data-text="PENGUINS">
+                        <div class="photo-flip" data-text="ani">
                             <div class="photo-front">
                                 <img src="picture6.jpg" alt="Memory 6">
                             </div>
                             <div class="photo-back">
-                                <span>Rămâi binecuvântată și continuă să strălucești ✨</span>
+                                <span>ani</span>
                             </div>
                         </div>
                     </div>
@@ -712,13 +708,21 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
                 <button class="btn surprise-btn" id="surprise-btn">I know you like surprises, click here to get one!</button>
             </div>
             
-            <p class="surprise-text" id="surprise-text">A special surprise for my favorite Pingu! happy first birthday in my heart🐧💖</p>
-            <img src="surprising_picture.jpg" alt="Surprise!" class="surprise-image" id="surprise-image">
+            <div class="surprise-flip-container" id="surprise-image">
+                <div class="photo-flip" data-text="MWAH! YOU'RE AMAZING!">
+                    <div class="photo-front">
+                        <img src="surprising_picture.jpg" alt="Surprise!">
+                    </div>
+                    <div class="photo-back">
+                        <span>MWAH! YOU'RE AMAZING!</span>
+                    </div>
+                </div>
+            </div>
             
             <button class="btn end-btn" id="end-btn" style="display: none;">Let's end with a ...</button>
             
             <div class="final-message" id="final-message">
-                <h2>Let's end with this special cute memory!<br> I JUST WANNA BE WITH YOU MWAH<br> HFIDJHFISJDNFJSIDF MWAH<br> DFIDHIFSBHFDBSD MWAH</h2>
+                <h2>Let's end with this special cute memory!<br> I JUST WANNA BE WITH YOU MWAH<br> HFIDJHFISJDNFJSIDF MWAH<br> DFIDJHFISJDNFJSIDF MWAH</h2>
                 <video class="surprise-video" id="surprise-video" controls>
                     <source src="video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -735,42 +739,42 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
                 question: `What word do I call you the most recently?`,
                 answers: ["cutie", "blue"],
                 hint: "Hint: It's the word that best describes you."
-                        },
-            {
-                question: `In what month did we start talking?`,
-                answers: ["december"], // Multiple correct answers
-                hint: "Hint: WTF PINGU, U want me to give u a hint for this one!"
-            },
-            {
-                question: `What combo of agents do we usually play with the most? (enter the answer like that agent/agent)`,
-                answers: ["phoenix/clove","phnx/clove"], // Multiple correct answers
-                hint: "Hint: BBC/transgender"
-            },
-            {
-                question: `What's our favorite song? `,
-                answers: ["apt apt", "apt"], // Multiple correct answers
-                hint: "Hint: DONT U WANT ME LIKE I WANT U BABY !!!"
-            },
-            {
-                question: `If someone asked you to say a word that only you and I would understand, what would it be? (there are 4 words)`,
-                answers: ["mffina", "mffino", "handie", "ididot"], // Multiple correct answers
-                hint: "Hint: mff(male/female), handsome, idiot"
-            },
-            {
-                question: `What was the Right Ball account's name before it became Right Ball?`,
-                answers: ["SayebZebi"], // Multiple correct answers
-                hint: "Hint: Leave My Pula"
-            },
-            {
-                question: `What was the Left Ball account's name before it became Left Ball?`,
-                answers: ["MoukaAbk"], // Multiple correct answers
-                hint: "Hint: Remember my famous nickname"
-            },
-            {
-                question: `Since I know you like Math, find x: (2x + 10) / (x - 5) + √x = 4 + √15`,
-                answers: ["15"], // Multiple correct answers
-                hint: "Hint: It's my little pingu's age :)))"
             }
+            // {
+            //     question: `In what month did we start talking?`,
+            //     answers: ["december", "dec"],
+            //     hint: "Hint: WTF PINGU, U want me to give u a hint for this one!"
+            // },
+            // {
+            //     question: `What combo of agents do we usually play with the most? (enter the answer like that agent/agent)`,
+            //     answers: ["phoenix/clove", "clove/phoenix"],
+            //     hint: "Hint: BBC/cuteness"
+            // },
+            // {
+            //     question: `What's our favorite song?`,
+            //     answers: ["apt apt", "apt"],
+            //     hint: "Hint: DONT U WANT ME LIKE I WANT U BABY !!!"
+            // },
+            // {
+            //     question: `If someone asked you to say a word that only you and I would understand, what would it be? (there are 4 words)`,
+            //     answers: ["mffina", "mffino", "handie", "ididot"],
+            //     hint: "Hint: mff(male/female), handsome, idiot"
+            // },
+            // {
+            //     question: `What was the Right Ball account's name before it became Right Ball?`,
+            //     answers: ["SayebZebi", "sayebzebi"],
+            //     hint: "Hint: Leave My Pula"
+            // },
+            // {
+            //     question: `What was the Left Ball account's name before it became Left Ball?`,
+            //     answers: ["MoukaAbk", "moukaabk"],
+            //     hint: "Hint: Remember my famous nickname"
+            // },
+            // {
+            //     question: `Since I know you like Math, find x: (2x + 10) / (x - 5) + √x = 4 + √15`,
+            //     answers: ["15"],
+            //     hint: "Hint: It's my little pingu's age :)))"
+            // }
         ];
 
         const welcomeScreen = document.querySelector('.welcome-screen');
@@ -793,7 +797,6 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
         const birthdayNameElement = document.getElementById('birthday-name');
         const photoGallery = document.getElementById('photo-gallery');
         const surpriseImage = document.getElementById('surprise-image');
-        const surpriseText = document.getElementById('surprise-text');
         const surpriseVideo = document.getElementById('surprise-video');
         const finalMessage = document.getElementById('final-message');
         const birthdayMessage = document.querySelector('.birthday-message');
@@ -801,7 +804,7 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
 
         birthdayPersonElement.textContent = birthdayPerson;
         birthdayNameElement.textContent = birthdayPerson;
-        totalQuestions.textContent = quizData.length;
+        totalQuestions.textContent = 1;
 
         let currentQuestion = 0;
         let score = 0;
@@ -832,15 +835,13 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
             photoGallery.style.display = 'flex';
             seePicsBtn.style.display = 'none';
             surpriseImage.style.display = 'none';
-            surpriseText.style.display = 'none';
             endBtn.style.display = 'none';
             finalMessage.style.display = 'none';
         });
 
         surpriseBtn.addEventListener('click', () => {
             photoGallery.style.display = 'none';
-            surpriseImage.style.display = 'block';
-            surpriseText.style.display = 'block';
+            surpriseImage.style.display = 'flex';
             endBtn.style.display = 'block';
             surpriseBtn.style.display = 'none';
             finalMessage.style.display = 'none';
@@ -848,7 +849,6 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
 
         endBtn.addEventListener('click', () => {
             surpriseImage.style.display = 'none';
-            surpriseText.style.display = 'none';
             surpriseVideo.style.display = 'block';
             finalMessage.style.display = 'block';
             endBtn.style.display = 'none';
@@ -929,7 +929,6 @@ Raisa Gabriela Sofrone, May God bless you! Always stay this amazing person you a
             seePicsBtn.style.display = 'block';
             photoGallery.style.display = 'none';
             surpriseImage.style.display = 'none';
-            surpriseText.style.display = 'none';
             endBtn.style.display = 'none';
             finalMessage.style.display = 'none';
             
